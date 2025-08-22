@@ -6,13 +6,13 @@
     <link rel="shortcut icon" href="/public/favicon/likelion.ico" type="image/x-icon" />
     <link rel="icon" href="/public/favicon/likelion.svg" type="image/svg" />
     <title>테이블 관련 요소</title>
-    <style>
+    <!-- <style>
       table,
       th,
       td {
         border: 1px solid currentColor;
       }
-    </style>
+    </style> -->
   </head>
   <body>
     <a href="/index.html">Index로 이동</a>
@@ -67,6 +67,89 @@
         <th scope="row" role="rowheader">평균</th>
         <td role="cell">80</td>
         <td role="cell">90</td>
+      </tr>
+    </table>
+    <hr />
+    <!-- 혼자 해보기 -->
+    <table class="class-info">
+      <colgroup>
+        <col style="background-color: aquamarine; width: 100px" />
+        <col style="background-color: yellowgreen" />
+        <col style="background-color: aquamarine; width: 100px" />
+        <col style="background-color: yellowgreen" />
+      </colgroup>
+      <caption class="sr-only">
+        입문자를 위한 Git과 HTML&CSS 과정
+        <span>학습시간, 교육비지원, 수료기준, 교재정보, 난이도, 평가항목, 정원에 대해 알려주는 표</span>
+      </caption>
+      <tr>
+        <th id="class-time">학습시간</th>
+        <td headers="class-time">09:00 ~ 17:00 (28시간)</td>
+        <th id="level">난이도</th>
+        <td headers="level">초급</td>
+      </tr>
+      <tr>
+        <th id="money">교육비 지원</th>
+        <td headers="money">고용보험 비환급</td>
+        <th id="Evaluation item">평가항목</th>
+        <td headers="Evaluation item">출석률 100%</td>
+      </tr>
+      <tr>
+        <th id="Completion criteria">수료기준</th>
+        <td headers="Completion criteria">총점 80점 이상시 수료</td>
+        <th id="personnel">정원</th>
+        <td headers="personnel">24명</td>
+      </tr>
+      <tr style="background-color: yellowgreen">
+        <th id="book-info">교재정보</th>
+        <td style="background-color: aquamarine" headers="book-info" colspan="3">
+          입문자를 위한 Git과 HTML&CSS<br />
+          HTML & CSS 웹사이트 개발과 디자인 기초 (35,000원)
+        </td>
+      </tr>
+    </table>
+    <hr />
+    <!-- col 사용 예시 -->
+    <table>
+      <colgroup>
+        <col style="background: #f0f0f0" />
+        <!-- 1번째 열 스타일 -->
+        <col style="background: #d0f0ff" />
+        <!-- 2번째 열 스타일 -->
+        <col span="2" style="background: #ffe0e0" />
+        <!-- 3,4번째 열에 동일 스타일 -->
+      </colgroup>
+
+      <tr>
+        <th>이름</th>
+        <th>나이</th>
+        <th>성별</th>
+        <th>직업</th>
+      </tr>
+      <tr>
+        <td>홍길동</td>
+        <td>20</td>
+        <td>남</td>
+        <td>학생</td>
+      </tr>
+    </table>
+
+    <!-- row(행)에 따로 스타일 넣기 예시 -->
+    <table border="1">
+      <colgroup>
+        <col style="background: lightyellow" />
+        <!-- 열 전체 색 -->
+        <col style="background: lightblue" />
+      </colgroup>
+
+      <tr style="background: lightgreen">
+        <!-- 행 전체 색 -->
+        <td>1행 1열</td>
+        <td>1행 2열</td>
+      </tr>
+      <tr>
+        <td>2행 1열</td>
+        <td>2행 2열</td>
       </tr>
     </table>
   </body>
