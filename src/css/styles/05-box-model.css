@@ -1,0 +1,39 @@
+.container {
+  border: 2px solid blueviolet;
+  margin: 20px auto;
+  width: 800px;
+  display: flex;
+}
+
+.container div {
+  width: 80px;
+  height: 80px;
+  border: 1px solid red;
+  border-radius: 50%;
+  align-content: center;
+  padding-left: 1em;
+}
+
+.container div:nth-child(n + 2) {
+  margin-left: -20px;
+}
+
+.container div:first-child {
+  background-color: var(--yellow);
+}
+
+.container div:nth-child(2) {
+  background-color: var(--pink);
+}
+
+.container div:nth-child(3) {
+  background-color: var(--aqua);
+}
+
+.container div:last-child {
+  background-color: var(--mint);
+}
+
+.container div:hover {
+  z-index: 100;
+}
