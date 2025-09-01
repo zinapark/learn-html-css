@@ -84,11 +84,11 @@ body {
 
 /* 아바타 레이아웃 */
 .avatar-list {
-  background-color: #ffc;
   display: flow-root;
   padding: 10px 30px;
   width: 400px;
-  border: 2px solid red;
+  border: 2px solid #dbdbdb;
+  border-radius: 5px;
 
   li {
     float: left;
