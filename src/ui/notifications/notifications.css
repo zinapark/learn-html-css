@@ -1,0 +1,48 @@
+body {
+  margin: 20px;
+}
+
+.notification {
+  --black: #121212;
+  --green: #22be61;
+  --gray: #9b9a90;
+  --white: #fff;
+
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: 0.25rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 1.25rem;
+  align-items: center;
+
+  .notification-icon {
+    flex: 0 0 auto;
+  }
+
+  .notification-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 4px;
+
+    strong {
+      color: var(--green);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    time {
+      color: var(--green);
+      font-size: 0.6875rem;
+    }
+
+    p {
+      color: var(--gray);
+      font-size: 0.875rem;
+      inline-size: 100%;
+    }
+  }
+}
