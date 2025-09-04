@@ -127,3 +127,68 @@ body {
     }
   }
 }
+
+/* 입력 서식 */
+/* .input {
+  background-color: var(--white);
+  border: 1px solid var(--gray-100);
+  padding-inline: 20px;
+  padding-block: 18px;
+
+  label {
+    color: var(--gray-400);
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  input {
+    border: none;
+  }
+} */
+
+.input {
+  --primary-color: var(--red-500);
+  --text-color: var(--gray-700);
+
+  color: var(--text-color);
+  border: 1px solid currentColor;
+  padding: 12px 20px;
+  position: relative;
+
+  &:focus-within {
+    background: #ffc;
+
+    label {
+      color: var(--primary-color);
+      font-size: 10px;
+      translate: 0 -120%;
+      font-weight: 600;
+    }
+  }
+
+  label {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 20px;
+    translate: 0 -50%;
+  }
+
+  input {
+    inline-size: 100%;
+    border: 0 none;
+    background: transparent;
+    outline: none;
+  }
+}
+
+.input-wrapper {
+  --primary-color: var(--red-500);
+
+  p {
+    color: var(--primary-color);
+    font-size: 12px;
+    margin-block: 5px;
+    margin-inline-start: 20px;
+    display: none;
+  }
+}
