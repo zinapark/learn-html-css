@@ -109,3 +109,40 @@ body {
     flex-grow: 1;
   }
 }
+
+/* 연습 */
+
+.zina {
+  margin-top: 20px;
+  background: #ffc;
+  display: flex;
+  flex-direction: column wrap;
+  height: 200px;
+  width: 200px;
+  justify-content: space-around;
+  align-content: space-around;
+
+  .zina-item1 {
+    background: red;
+
+    flex: 1;
+  }
+
+  .zina-item2 {
+    background: blue;
+
+    flex: 1;
+  }
+
+  .zina-item3 {
+    background: yellow;
+
+    flex: 1;
+  }
+
+  .zina-item4 {
+    background: yellow;
+
+    flex: 1;
+  }
+}
