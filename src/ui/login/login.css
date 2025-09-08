@@ -1,14 +1,271 @@
-body {
-  margin: 20px;
+:root {
+  --white: #fff;
+  --green-100: #03cc5c;
+  --green-200: #1bf008;
+  --green-300: #03cca8;
+
+  --blue-100: #e9f0fd;
+  --red-100: #ff1414;
+
+  --gray-100: #bcc3c7;
+  --gray-200: #9b9a90;
+  --gray-300: #6d7478;
+
+  --primary-color: var(--green-100);
+  --start-color: var(--green-200);
+  --end-color: var(--green-300);
+  --active-color: var(--blue-100);
+}
+
+/* index로 이동 */
+body > a:first-child {
+  position: fixed;
+  inset-inline-start: 20px;
+  inset-block-start: 20px;
+  color: var(--gray-100);
 }
 
 /* 로고 컴포넌트 */
 .logo {
   display: inline-flex;
   inline-size: clamp(164px, 51.25%, 230px);
+  color: var(--primary-color);
+}
 
-  /* inline-size: min(51.25%, 230px);
+/* 버튼 컴포넌트 */
+.button {
+  border: 0 none;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
 
-  @media (width >= 768px) {
-    inline-size: 230px; } */
+  &.button-fill {
+    background: var(--primary-color);
+    color: var(--white);
+  }
+
+  &:disabled {
+    background: var(--gray-200);
+  }
+
+  &:not(:disabled):hover,
+  &:not(:disabled):focus,
+  &:not(:disabled):active {
+    background: var(--green-300);
+  }
+}
+
+/* 체크박스 컴포넌트 */
+/* 체크박스 - 배경 이미지 & SVG 이미지 */
+.checkbox {
+  --size: 24px;
+  --gap: 4px;
+
+  position: relative;
+  display: inline-flex;
+
+  input {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    margin: 0;
+    inline-size: var(--size);
+    block-size: var(--size);
+    appearance: none;
+  }
+
+  label {
+    block-size: var(--size);
+    display: inline-flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  &.bg-icon {
+    label {
+      background: url(/src/assets/naver/unchecked.svg) no-repeat;
+      padding-inline-start: calc(var(--size) + var(--gap));
+    }
+
+    input:checked + label {
+      background-image: url(/src/assets/naver/checked.svg);
+    }
+  }
+
+  &.svg-icon {
+    label {
+      column-gap: var(--gap);
+    }
+
+    input:checked + label {
+      .area,
+      .border {
+        fill: var(--green-100);
+      }
+
+      .marker {
+        fill: var(--white);
+      }
+    }
+  }
+}
+
+/* 링크 텍스트 */
+.textlink-new {
+  font-weight: 700;
+}
+
+/* 스위치 */
+.switch {
+  position: relative;
+  display: inline-flex;
+
+  input {
+    position: absolute;
+    margin: 0;
+    inset: 0;
+    appearance: none;
+  }
+
+  label::after {
+    content: 'OFF';
+    color: var(--gray-200);
+  }
+
+  input:checked + label::after {
+    content: 'ON';
+    color: var(--green-100);
+  }
+}
+
+/* 입력서식 */
+.input {
+  --size: 72px;
+
+  block-size: var(--size);
+  display: inline-flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+
+  input {
+    inline-size: 100%;
+    block-size: 48px;
+    border: 1px solid var(--gray-200);
+    padding-inline-start: 0.5em;
+
+    &:read-only {
+      background: var(--gray-100);
+    }
+  }
+
+  .error-message {
+    color: var(--red-100);
+    font-size: 0.75rem;
+    visibility: hidden;
+  }
+
+  input:user-invalid + .error-message {
+    visibility: visible;
+  }
+}
+
+/* 레이아웃 */
+/* 모바일 퍼스트 */
+.header {
+  margin-block: 70px 45px;
+  text-align: center;
+
+  @media (width >=768px) {
+    margin-block: 100px 50px;
+  }
+}
+
+/* 이 방법도 가능함 */
+/* .header {
+  text-align: center;
+  background: yellow;
+
+  .logo {
+    margin: 70px auto 45px;
+    display: flex;
+  }
+} */
+
+.main {
+  padding: 0 15px;
+
+  form {
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 10px;
+
+    @media (width >= 768px) {
+      inline-size: 460px;
+      margin-inline: auto;
+    }
+
+    .input,
+    .checkbox-wrapper,
+    .button {
+      inline-size: 100%;
+    }
+
+    .checkbox-wrapper {
+      order: 1;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      @media (width < 768px) {
+        .checkbox {
+        }
+
+        .textlink-new,
+        .switch {
+          display: none;
+        }
+      }
+
+      @media (width >= 768px) {
+        justify-content: start;
+
+        .checkbox {
+          margin-inline-end: auto;
+        }
+
+        .switch {
+          inline-size: 2em;
+          display: flex;
+          justify-content: end;
+        }
+      }
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      block-size: 56px;
+    }
+
+    /* 상태 디자인 */
+    :focus {
+      outline: 0 none;
+    }
+
+    .input input:focus-visible {
+      border: 1px solid var(--green-100);
+      background: var(--blue-100);
+    }
+
+    .button:focus-visible {
+      box-shadow: 0 0 1px 2px #f00;
+    }
+
+    .checkbox-wrapper *:focus-visible {
+      outline: 2px solid var(--green-100);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
 }

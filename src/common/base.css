@@ -24,4 +24,8 @@ a {
   padding: 0.3em 0.7em;
   border-radius: 4px;
   border: 0 none;
+
+  &:hover {
+    background: orange;
+  }
 }
