@@ -8,3 +8,20 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+/* 반응형 svg 이미지 */
+.svg-img {
+  width: 100%;
+  height: auto;
+}
+
+/* copy component */
+.copy-component {
+  display: flex;
+  background: black;
+  color: white;
+  margin-block: 1em;
+  padding: 0.3em 0.7em;
+  border-radius: 4px;
+  border: 0 none;
+}
