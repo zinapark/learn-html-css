@@ -46,8 +46,14 @@ body {
   inline-size: 500px;
   block-size: 200px;
   display: grid;
-  grid-template-columns: 50px 6.25rem 15% 1fr;
+  grid-template-columns: 50px 100px 50px 100px;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+  > div:nth-child(odd) {
+    order: 1;
+  }
 }
 
 /* 열과 행의 크기를 - repeat() 함수 활용 */
